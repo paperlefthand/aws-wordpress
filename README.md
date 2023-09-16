@@ -1,19 +1,14 @@
-# EC2+FastAPIのサンプル
+# ELBで冗長構成したWordpressサーバのサンプル
 
 ## 構成
 
-1. 2つのAZ(ap-northeast-1a,1c)にまたがる1つのVPC. VPCにはInternet Gateway
-2. それぞれのAZにPublic/Privateのサブネット
-3. 2.のパブリックサブネットにはそれぞれNAT Gateway
-4. ap-northeast-1aのpublic subnetには踏み台サーバ(EC2 t2.micro)
-5. ap-northeast-1a,1cのprivate subnetにはそれぞれアプリサーバ(EC2 t2.micro Pythonのfastapi)
-6. 4.の踏み台サーバには, 指定したキーペアを持つ外部からSSH接続可能.
+[AWSのハンズオン](https://catalog.us-east-1.prod.workshops.aws/workshops/47782ec0-8e8c-41e8-b873-9da91e822b36/ja-JP)の通り.
+
+## memo
+
+WordPress用のAMIはあらかじめ作成しておく. その際EBSのスナップショットが作成される.
 
 ## TODO
 
-- リソース名の付与
-- サーバへのSSH確認
-- FastAPIの動作確認
-- diagram
-- ALB
-- CI/CD
+[Next Step](https://catalog.us-east-1.prod.workshops.aws/workshops/47782ec0-8e8c-41e8-b873-9da91e822b36/ja-JP/hands-on/phase11)
+[Manage AWS RDS instances](https://developer.hashicorp.com/terraform/tutorials/aws/aws-rds?utm_medium=WEB_IO&in=terraform%2Faws&utm_content=DOCS&utm_source=WEBSITE&utm_offer=ARTICLE_PAGE)
