@@ -48,7 +48,7 @@ resource "aws_security_group" "wordpress_server_sg" {
     from_port       = 80
     to_port         = 80
     protocol        = "tcp"
-    security_groups = [aws_security_group.elb_sg.id]
+    security_groups = [aws_security_group.alb_sg.id]
   }
 
 

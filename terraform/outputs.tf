@@ -8,9 +8,9 @@ output "public_subnet_ids" {
   value       = [aws_subnet.public_subnet_a.id, aws_subnet.public_subnet_c.id]
 }
 
-output "elb_dns_name" {
-  description = "The DNS name of the ELB"
-  value       = aws_lb.elb.dns_name
+output "alb_dns_name" {
+  description = "The DNS name of the ALB"
+  value       = aws_lb.alb.dns_name
 }
 
 

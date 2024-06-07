@@ -1,7 +1,6 @@
 resource "aws_security_group" "rds_sg" {
   name   = "rds_sg"
   vpc_id = aws_vpc.main.id
-
   ingress {
     description     = "MySQL"
     from_port       = 3306
@@ -9,8 +8,8 @@ resource "aws_security_group" "rds_sg" {
     protocol        = "tcp"
     security_groups = [aws_security_group.wordpress_server_sg.id]
   }
-
   egress {
+    description     = "Others"
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
